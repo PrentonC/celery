@@ -2,7 +2,7 @@ version: "3.3"
 services:
   broker:
     hostname: rabbit
-    image: rabbitmq:latest
+    image: rabbitmq:3.9-management-alpine
     # environment:
     #   - DEFAULT_USER=admin
     #   - DEFAULT_PASS=mypass
