@@ -24,12 +24,9 @@ services:
       - broker
 
   flower:
-    build: /flower/
-    context: .
-    dockerfile: dockerfile
+    image: mher/flower
+    environment:
+      - CELERY_BROKER_URL=amqp://guest:guest@broker:5672
+      - FLOWER_PORT=8888
     ports:
-      - "5555:5555"
-    links:
-      - worker
-    depends_on:
-      - worker
+      - 8888:8888
