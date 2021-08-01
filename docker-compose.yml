@@ -24,9 +24,11 @@ services:
       - broker
 
   flower:
-    image: mher/flower
+    image: mher/flower:0.9.7
     environment:
       - CELERY_BROKER_URL=amqp://guest:guest@broker:5672
       - FLOWER_PORT=8888
     ports:
       - 8888:8888
+    depends_on:
+      - worker
