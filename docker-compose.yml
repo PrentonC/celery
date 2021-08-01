@@ -3,9 +3,9 @@ services:
   broker:
     hostname: rabbit
     image: rabbitmq:latest
-    environment:
-      - DEFAULT_USER=admin
-      - DEFAULT_PASS=mypass
+    # environment:
+    #   - DEFAULT_USER=admin
+    #   - DEFAULT_PASS=mypass
     expose:
       - "5672:5672"
     ports:
