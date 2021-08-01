@@ -16,11 +16,20 @@ services:
     build:
       context: .
       dockerfile: dockerfile
-    ports:
-      - "5555:5555"
     volumes:
       - .:/app
     links:
       - broker
     depends_on:
       - broker
+
+  flower:
+    build: /flower/
+    context: .
+    dockerfile: dockerfile
+    ports:
+      - "5555:5555"
+    links:
+      - worker
+    depends_on:
+      - worker
