@@ -13,3 +13,6 @@ app.conf.task_queues = (
 app.conf.task_default_exchange = 'tasks'
 app.conf.task_default_exchange_type = 'direct'
 app.conf.task_default_routing_key = 'default'
+
+# CELERY_NODES = "worker1 worker2"
+# CELERY_OPTS = "-Q:worker1 default", "-Q:worker2 slow_tasks"
